@@ -5,6 +5,8 @@ set -e
 dpkg-maintscript-helper mv_conffile /etc/php5/conf.d/xhprof.ini \
     /etc/php5/mods-available/xhprof.ini 1.0.7-5 -- "$@"
 rm -f /etc/php5/conf.d/xhprof.ini
+# remove config symlink, see debian/php5-xhprof.links
+rm /usr/share/php5/xhprof_lib/config.php
 
 [ "$1" = "remove" ] && [ -x /usr/sbin/php5dismod ] && php5dismod xhprof
 
