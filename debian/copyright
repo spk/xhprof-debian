@@ -1,0 +1,15 @@
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: xhprof
+Upstream-Contact: Kannan Muthukkaruppan <kannan@php.net>
+Source: http://pecl.php.net/package/xhprof/
+
+Files: *
+Copyright: Kannan Muthukkaruppan <kannan@php.net> ()
+License: Apache 2.0
+
+Files: debian/*
+Copyright: 2012, Laurent Arnoud <laurent@spkdev.net>
+License: GPL-2+
+ On Debian GNU/Linux systems, the complete text of the GNU General
+ Public License (GPL) version 2 can be found at
+ /usr/share/common-licenses/GPL-2.

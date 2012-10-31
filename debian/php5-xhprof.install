@@ -1,0 +1,4 @@
+debian/xhprof.ini    etc/php5/mods-available
+external /usr/share/php5/
+xhprof_html /usr/share/php5/
+xhprof_lib /usr/share/php5/

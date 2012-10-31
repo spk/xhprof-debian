@@ -1,0 +1,13 @@
+#!/bin/sh
+
+set -e
+
+dpkg-maintscript-helper mv_conffile /etc/php5/conf.d/xhprof.ini \
+    /etc/php5/mods-available/xhprof.ini 1.0.7-5 -- "$@"
+rm -f /etc/php5/conf.d/xhprof.ini
+
+[ "$1" = "remove" ] && php5dismod xhprof
+
+#DEBHELPER#
+
+exit 0

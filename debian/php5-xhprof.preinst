@@ -1,0 +1,11 @@
+#!/bin/sh
+
+set -e
+
+dpkg-maintscript-helper mv_conffile /etc/php5/conf.d/xhprof.ini \
+    /etc/php5/mods-available/xhprof.ini 0.10.0-1 -- "$@"
+rm -f /etc/php5/conf.d/xhprof.ini
+
+#DEBHELPER#
+
+exit 0

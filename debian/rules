@@ -1,0 +1,32 @@
+#!/usr/bin/make -f
+
+PECL_PKG_NAME = xhprof
+PECL_PKG_VER  = 0.10.0
+
+PKGDIR = ${PECL_PKG_NAME}-${PECL_PKG_VER}
+EXTDIR = $(shell /usr/bin/php-config5 --extension-dir)
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	cd extension && phpize5
+	dh_auto_configure --sourcedirectory=extension -- \
+		--prefix=/usr \
+		--with-${PECL_PKG_NAME} \
+		--with-php-config=/usr/bin/php-config5
+
+override_dh_auto_build:
+	dh_auto_build --sourcedirectory=extension
+
+override_dh_auto_install:
+	echo "php:Depends=phpapi-`php-config5 --phpapi`" >> \
+		debian/php5-${PECL_PKG_NAME}.substvars
+	mkdir -p debian/php5-${PECL_PKG_NAME}/$(EXTDIR)
+	install -m 644 -o root -g root extension/modules/$(PECL_PKG_NAME).so \
+		debian/php5-${PECL_PKG_NAME}$(EXTDIR)/$(PECL_PKG_NAME).so
+	dh_installchangelogs CHANGELOG
+
+override_dh_auto_clean:
+	#rm -rf extension/{.deps,Makefile,Makefile.fragments,Makefile.global,Makefile.objects,acinclude.m4,aclocal.m4,build/,config.guess,config.h,config.h.in,config.nice,config.status,config.sub,configure,configure.in,install-sh,libtool,ltmain.sh,missing,mkinstalldirs,run-tests.php,config.log}
+	dh_auto_clean --sourcedirectory=extension

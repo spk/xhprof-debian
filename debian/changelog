@@ -1,0 +1,6 @@
+php-xhprof (0.10.0-1) unstable; urgency=low
+
+  [Laurent Arnoud, Alban Peignier]
+  * Initial Release (close: #XXX)
+
+ -- Laurent Arnoud <laurent@spkdev.net>  Wed, 24 Oct 2012 16:30:08 +0200 
