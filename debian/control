@@ -3,7 +3,7 @@ Section: php
 Priority: optional
 Maintainer: Laurent Arnoud <laurent@spkdev.net>
 DM-Upload-Allowed: yes
-Build-Depends: debhelper (>= 9), php5-dev (>= 5.4.1)
+Build-Depends: debhelper (>= 9), php5-dev (>= 5.3)
 Standards-Version: 3.9.3
 VCS-Git: git://git.debian.org/collab-maint/php-xhprof.git
 VCS-Browser: http://git.debian.org/?p=collab-maint/php-xhprof.git;a=summary
